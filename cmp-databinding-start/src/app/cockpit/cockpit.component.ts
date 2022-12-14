@@ -10,7 +10,7 @@ export class CockpitComponent implements OnInit {
 
   @Output() serverCreated = new EventEmitter<{ serverName: string, serverContent: string}>();
   @Output('bpCreated') bluePrintCreated = new EventEmitter<{ serverName: string, serverContent: string}>();
-  newServerName = '';
+ // newServerName = '';
   newServerContent = '';
   
   constructor() { }
@@ -18,11 +18,11 @@ export class CockpitComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddServer() {
-   this.serverCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent });
+  onAddServer(nameImput: HTMLInputElement) {
+   this.serverCreated.emit({ serverName: nameImput.value, serverContent: this.newServerContent });
   }
 
-  onAddBlueprint() {
-    this.bluePrintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent });
+  onAddBlueprint(nameImput: HTMLInputElement) {
+    this.bluePrintCreated.emit({ serverName:  nameImput.value, serverContent: this.newServerContent });
   }
 }
