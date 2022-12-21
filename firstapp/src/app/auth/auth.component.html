@@ -11,7 +11,7 @@
           (close)="onHandleError()">
         </app-alert> -->
 
-        <div  *ngIf="isLoading"  style="text-align: center;">
+        <div  style="text-align: center;"  *ngIf="isLoading">
             <app-loading-spinner></app-loading-spinner>
         </div>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
